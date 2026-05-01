@@ -9,14 +9,42 @@
       margin: 0;
       min-height: 100vh;
       font-family: Arial;
-      background: #02030a;
+      background: radial-gradient(circle at top, #1b2a4b 0%, #02030a 60%, #000005 100%);
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-repeat: repeat;
+      opacity: 0.7;
+      transform: translateZ(0);
+    }
+
+    body::before {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1px);
+      background-size: 18px 18px;
+      animation: drift 80s linear infinite;
+    }
+
+    body::after {
+      background-image: radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px);
+      background-size: 8px 8px;
+      animation: drift 120s linear infinite reverse;
+      opacity: 0.4;
     }
 
     .content {
+      position: relative;
+      z-index: 1;
       text-align: center;
       width: 90%;
       max-width: 900px;
@@ -61,6 +89,11 @@
     @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-1200px, 1200px); }
     }
 
     audio {
