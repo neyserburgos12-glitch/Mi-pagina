@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sonrisa Feliz</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd8a8, #ff95b6, #ff7ba9);
+      overflow: hidden;
+      position: relative;
+      color: #2c1a33;
+    }
+    .balloon {
+      position: absolute;
+      width: 40px;
+      height: 54px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50% 50% 50% 50%;
+      box-shadow: inset -8px -6px rgba(255, 181, 198, 0.4);
+      animation: floatBalloon 6s ease-in-out infinite;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      width: 2px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateX(-50%);
+    }
+    .message-box {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 90%;
+      padding: 34px 30px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 22px 60px rgba(255, 130, 152, 0.2);
+      text-align: center;
+      animation: fadeIn 1.6s ease;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: 2.3rem;
+      color: #b94a73;
+      letter-spacing: 0.04em;
+    }
+    p {
+      margin: 0 0 24px;
+      line-height: 1.7;
+      color: #5d324c;
+      font-size: 1rem;
+    }
+    a {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: #ff597b;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    a:hover {
+      transform: translateY(-2px);
+      background: #e13962;
+    }
+    @keyframes floatBalloon {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-40px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="balloon" style="top: 14%; left: 15%; animation-delay: 0s;"></div>
+  <div class="balloon" style="top: 24%; left: 75%; width: 34px; height: 46px; animation-delay: 0.9s;"></div>
+  <div class="balloon" style="top: 56%; left: 25%; width: 46px; height: 62px; animation-delay: 0.4s;"></div>
+  <div class="balloon" style="top: 70%; left: 68%; width: 38px; height: 52px; animation-delay: 1.3s;"></div>
+
+  <div class="message-box">
+    <h1>Sonríe Siempre</h1>
+    <p>Tu sonrisa es una chispa de alegría que llena cada rincón.</p>
+    <a href="index.html">Volver</a>
+  </div>
+</body>
+</html>
